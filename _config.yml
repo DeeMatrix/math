@@ -1,0 +1,74 @@
+# _config.yml - GitHub Pages 配置文件
+
+# 站点基本信息
+title: "数学分析基础教程"
+description: "从皮亚诺公理到有理数的严格构造"
+author: "Your Name"
+url: "https://yourusername.github.io"
+baseurl: "/your-repo-name"
+
+# Jekyll 主题（可选）
+theme: minima
+# 或者使用 remote_theme
+# remote_theme: pages-themes/minimal@v0.2.0
+
+# 插件配置
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Markdown 处理器配置
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  math_engine: mathjax
+  math_engine_opts:
+    preview: true
+    preview_as_code: false
+
+# 高亮配置
+highlighter: rouge
+
+# 排除文件
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# 包含文件
+include:
+  - _pages
+
+# 默认设置
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /:categories/:year/:month/:day/:title/
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# 分页（如果需要）
+paginate: 10
+paginate_path: "/page:num/"
+
+# 社交链接（可选）
+github_username: yourusername
+email: your.email@example.com
+
+# MathJax 配置（重要！）
+mathjax:
+  source: https://polyfill.io/v3/polyfill.min.js?features=es6
+  config: 'MathJax = {tex: {inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]], processEscapes: true, processEnvironments: true}, options: {skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code", "option"]}, startup: {typeset: false}};'
